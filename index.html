@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quu - Tu Viaje de Pigmentos por Guatemala</title>
+    <!-- Incluye Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .hero {
+            /* CAMBIAR: Imagen de fondo para la sección principal */
+            /* Reemplaza 'uploaded:image_a8d312.png' con el enlace de tu propia imagen. */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fondo.png') no-repeat center center;
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+        /* Definiciones de los nuevos colores personalizados */
+        .text-quu-green { color: #2faa7b; }
+        .text-quu-magenta { color: #a81969; }
+        .text-quu-blue { color: #226fbd; }
+        .text-quu-purple { color: #312885; }
+        .bg-quu-green { background-color: #2faa7b; }
+        .bg-quu-magenta { background-color: #a81969; }
+        .bg-quu-blue { background-color: #226fbd; }
+        .bg-quu-purple { background-color: #312885; }
+        /* Para el botón de "¡Reserva tu aventura!" */
+        .hover\:bg-quu-blue-dark:hover { background-color: #1a5692; }
+
+        /* Nueva clase de animación para el efecto de expandir al hacer clic */
+        .animate-expand-click {
+            animation: expand-pulse 0.2s ease-in-out;
+        }
+
+        @keyframes expand-pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Encabezado Fijo con Logo y Eslogan -->
+    <header class="sticky top-0 z-50 bg-quu-purple shadow-md p-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center">
+            <!-- CAMBIAR: Logo de la marca -->
+            <img src="logo pagina.png" width="120px" height="170px" >
+        </a>
+        <p class="hidden sm:block text-sm text-white font-medium">Tu viaje de pigmentos por Guatemala.</p>
+    </header>
+
+    <!-- Sección de Héroe -->
+    <section class="hero h-screen flex flex-col items-center justify-center text-white text-center px-4 py-20">
+        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 animate-fade-in">¡El arte nunca fue tan divertido!</h2>
+        <p class="text-xl sm:text-2xl lg:text-3xl mb-8 max-w-2xl font-light">Prepárate para una aventura interactiva en los museos de la ciudad.</p>
+        <a href="#ruta" class="bg-quu-magenta text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-quu-blue-dark transition duration-300 transform hover:scale-105">
+            ¡Descubre la Ruta del Quetzal!
+        </a>
+    </section>
+
+    <main class="container mx-auto px-4 py-16">
+
+        <!-- Sección de Propuesta -->
+        <section id="que-es" class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">¿Arte aburrido? ¡Piensa de nuevo!</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                En Quu, transformamos la visita a museos en una aventura moderna y experiencial. Cada tour es una misión interactiva para descubrir la historia, la belleza y la herencia del arte guatemalteco.
+            </p>
+        </section>
+
+        <!-- Sección de la Ruta del Quetzal -->
+        <section id="ruta" class="mb-16">
+            <h2 class="text-center text-3xl sm:text-4xl font-bold mb-12">La Ruta del Quetzal</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Tarjeta de Museo Popol Vuh con imagen más grande -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center transition duration-300 hover:shadow-xl hover:scale-105 museum-card" data-museum="popol-vuh">
+                    <div class="w-full h-32 mb-4 bg-transparent rounded-lg flex items-center justify-center">
+                        <!-- CAMBIAR: Logo del Museo Popol Vuh -->
+                        <img src="verde.png" alt="Logo de Museo Popol Vuh" class="w-32 h-32 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-quu-green">Museo Popol Vuh</h3>
+                    <p class="text-gray-600">Explora la historia y la cerámica precolombina que narra el origen de Guatemala. Un legado ancestral que te conecta con el pasado.</p>
+                </a>
+
+                <!-- Tarjeta de Museo Ixchel -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center transition duration-300 hover:shadow-xl hover:scale-105 museum-card" data-museum="ixchel">
+                    <div class="w-full h-32 mb-4 bg-transparent rounded-lg flex items-center justify-center">
+                        <!-- CAMBIAR: Logo del Museo Ixchel -->
+                        <img src="rojo.png" alt="Logo de Museo Ixchel" class="w-32 h-32 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-quu-magenta">Museo Ixchel</h3>
+                    <p class="text-gray-600">Sumérgete en un mar de textiles indígenas. Cada hilo y cada diseño cuenta una historia ancestral de las comunidades guatemaltecas.</p>
+                </a>
+
+                <!-- Tarjeta de Galería El Túnel -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center transition duration-300 hover:shadow-xl hover:scale-105 museum-card" data-museum="el-tunel">
+                    <div class="w-full h-32 mb-4 bg-transparent rounded-lg flex items-center justify-center">
+                        <!-- CAMBIAR: Logo de la Galería El Túnel -->
+                        <img src="azul.png" alt="Logo de Galería El Túnel" class="w-32 h-32 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-quu-blue">Galería El Túnel</h3>
+                    <p class="text-gray-600">Atraviesa este espacio dedicado al arte contemporáneo. Aquí, las obras desafían la realidad y te invitan a reflexionar sobre el presente.</p>
+                </a>
+
+                <!-- Tarjeta de Museo de Arte Moderno -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center transition duration-300 hover:shadow-xl hover:scale-105 museum-card" data-museum="arte-moderno">
+                    <div class="w-full h-32 mb-4 bg-transparent rounded-lg flex items-center justify-center">
+                         <!-- CAMBIAR: Logo del Museo de Arte Moderno -->
+                         <img src="morado.png" alt="Logo de Museo de Arte Moderno" class="w-32 h-32 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-quu-purple">Museo de Arte Moderno</h3>
+                    <p class="text-gray-600">Conoce a los grandes maestros del arte guatemalteco. Este museo te enseña cómo los artistas han plasmado la identidad de nuestra nación.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Mapa del Tour -->
+        <section id="visuales" class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-12">Mapa del Tour</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1: Mapa de la ruta -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center transition duration-300 hover:shadow-xl hover:scale-105 info-card" data-info="mapa">
+                    <!-- CAMBIAR: Imagen principal del mapa del tour -->
+                    <img src="Mapa 1.png" alt="Un mapa ilustrativo de la Ruta del Quetzal, mostrando la ubicación de los museos." class="rounded-lg mb-4 w-full h-auto">
+                    <p class="text-gray-600 text-sm">Tu guía para un viaje de pigmentos por la Ciudad de Guatemala.</p>
+                </a>
+                <!-- Tarjeta 2: Stand de museo -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center transition duration-300 hover:shadow-xl hover:scale-105 info-card" data-info="stand">
+                    <!-- CAMBIAR: Imagen principal del stand de encuentro -->
+                    <img src="Stand1.png" alt="Un stand de la marca Quu dentro de uno de los museos, con un color vibrante." class="rounded-lg mb-6 w-full h-auto">
+                    <p class="text-gray-600 text-sm">El stand de Quu es tu punto de partida para cada misión interactiva.</p>
+                </a>
+                <!-- Tarjeta 3: Merchandising -->
+                <a href="#" class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center transition duration-300 hover:shadow-xl hover:scale-105 info-card" data-info="merchandising">
+                    <!-- CAMBIAR: Imagen principal del merchandising -->
+                    <img src="Bolsa.png" alt="Una bolsa con regalos de la marca Quu, incluyendo una taza, un pin y un llavero." class="rounded-lg mb-4 w-full h-auto">
+                    <p class="text-gray-600 text-sm">Al final de la ruta, recibe regalos exclusivos para conmemorar tu aventura.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de CTA -->
+        <section id="reserva" class="bg-quu-blue text-white rounded-xl shadow-lg p-12 text-center my-16">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">¿Listo para el desafío?</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-6">Únete a "La Ruta del Quetzal" y reconecta con tus raíces de una forma que nunca imaginaste. ¡Reserva tu aventura hoy mismo!</p>
+            <a href="#" class="bg-white text-quu-blue font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                ¡Reserva tu aventura!
+            </a>
+        </section>
+
+        <!-- NUEVA SECCIÓN PARA EL LOGOTIPO -->
+        <section id="logo-section" class="text-center py-12">
+            <!-- CAMBIA ESTA URL CON EL ENLACE A TU LOGOTIPO -->
+            <img src="Imago.png" alt="Logo de Quu" class="w-40 h-40 object-contain mx-auto">
+        </section>
+
+    </main>
+
+    <!-- Modal para detalles de museos y secciones de info (único modal) -->
+     <div id="info-detail-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[9999] hidden">
+        <div id="modal-content" class="bg-white rounded-xl shadow-2xl max-w-7xl w-full relative overflow-y-auto max-h-[90vh] flex flex-col"> <!-- AQUÍ SE CAMBIÓ EL ANCHO DEL MODAL PARA QUE LA IMAGEN SEA MÁS GRANDE -->
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            
+            <!-- Contenedor general para la info -->
+            <div id="info-container" class="flex flex-col lg:flex-row p-8 lg:p-12">
+                <!-- Imagen principal -->
+                <div id="main-image-container" class="lg:w-1/2 p-4 flex items-center justify-center">
+                    <img id="info-image" src="" alt="Imagen de la experiencia" class="w-full rounded-lg h-full object-contain">
+                </div>
+                <!-- Título y descripción -->
+                <div id="text-container" class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 id="info-title" class="text-3xl sm:text-4xl font-bold mb-4"></h3>
+                    <p id="info-description" class="text-lg text-gray-700 leading-relaxed"></p>
+                </div>
+            </div>
+
+            <!-- Contenedor para imágenes y botones de merchandising -->
+            <div id="merchandising-container" class="hidden p-8 lg:p-12">
+                <div class="flex flex-col items-center text-center">
+                    <h3 id="merchandising-title" class="text-3xl sm:text-4xl font-bold mb-4"></h3>
+                    <p id="merchandising-description" class="text-lg text-gray-700 leading-relaxed mb-8"></p>
+                    <img id="merchandising-main-image" src="" alt="Imagen principal del merchandising" class="w-full rounded-lg mb-6 shadow-lg object-contain">
+                    
+                    <div id="merchandising-thumbnails" class="grid grid-cols-5 gap-4 w-full max-w-lg">
+                        <!-- Miniaturas se generarán con JS -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Quu. Todos los derechos reservados.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="hover:text-quu-magenta transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-quu-magenta transition duration-300">Instagram</a>
+                <a href="#" class="hover:text-quu-magenta transition duration-300">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Objeto que contiene la información de cada museo
+        const museumData = {
+            "popol-vuh": {
+                title: "Museo Popol Vuh",
+                // CAMBIAR: Imagen grande del Museo Popol Vuh
+                image: "Popol.png",
+                description: "Sumérgete en el pasado ancestral de Guatemala. El Museo Popol Vuh alberga una de las colecciones de arte maya y precolombino más importantes del mundo, con una impresionante variedad de cerámica, esculturas y objetos que narran las historias y mitos de nuestros orígenes. En tu aventura con Quu, este museo es el primer paso en tu 'viaje de pigmentos', donde descubrirás cómo los primeros habitantes de nuestra tierra utilizaban los colores y la forma para expresar su cosmovisión. Aquí aprenderás sobre cerámica prehispánica, esculturas mayas y el simbolismo ancestral.",
+                color: "text-quu-green"
+            },
+            "ixchel": {
+                title: "Museo Ixchel del Traje Indígena",
+                // CAMBIAR: Imagen grande del Museo Ixchel
+                image: "ixchel.png",
+                description: "Sumérgete en un mar de colores y texturas. El Museo Ixchel del Traje Indígena es un vibrante viaje a través de los trajes y textiles tradicionales de Guatemala. Cada pieza es una obra de arte que narra la historia, las creencias y la identidad de las comunidades indígenas. En tu tour con Quu, este museo te invita a descubrir cómo los hilos y los pigmentos naturales han sido utilizados por generaciones para crear obras de arte portátiles, llenas de significado y belleza. Aquí verás la vasta colección de trajes y textiles, y entenderás el significado detrás de los patrones y colores.",
+                color: "text-quu-magenta"
+            },
+            "el-tunel": {
+                title: "Galería El Túnel",
+                // CAMBIAR: Imagen grande de la Galería El Túnel
+                image: "Galeria1.png",
+                description: "Prepárate para desafiar tus sentidos. La Galería El Túnel es un espacio dedicado a las obras más vanguardistas y experimentales de artistas guatemaltecos. Aquí, el arte moderno y contemporáneo cobra vida, invitándote a reflexionar sobre la sociedad, la cultura y la imaginación. En tu aventura con Quu, este es el punto donde la creatividad no tiene límites. Explora cómo los artistas utilizan nuevas técnicas y materiales para expresar ideas complejas de una manera audaz y original, y descubre nuevos talentos de la plástica guatemalteca.",
+                color: "text-quu-blue"
+            },
+            "arte-moderno": {
+                title: "Museo de Arte Moderno Carlos Mérida",
+                // CAMBIAR: Imagen grande del Museo de Arte Moderno
+                image: "Carlos.png",
+                description: "Da un paseo por el siglo XX y la historia del arte guatemalteco. El Museo de Arte Moderno Carlos Mérida es un homenaje a los grandes maestros que marcaron el rumbo de la plástica nacional. En tu aventura con Quu, este es el lugar para entender cómo los artistas han plasmado la identidad y la cultura de nuestra nación a través del tiempo, dejando un legado invaluable para las futuras generaciones. Aquí te sumergirás en las obras de Carlos Mérida, los diferentes movimientos y la evolución de la identidad a través del arte.",
+                color: "text-quu-purple"
+            }
+        };
+
+        // Objeto que contiene la información para las tarjetas de "Mapa del Tour"
+        const infoData = {
+            "mapa": {
+                title: "Mapa del Tour: La Ruta del Quetzal",
+                // CAMBIAR: Imagen para el modal del mapa
+                image: "mapa2.png",
+                description: "Este es el mapa de la Ruta del Quetzal. Te guía por los cuatro museos de la ciudad: Popol Vuh, Ixchel, El Túnel y Arte Moderno. ¡Sigue las indicaciones para completar el tour y obtener tu premio!"
+            },
+            "stand": {
+                title: "Punto de Encuentro Quu",
+                // CAMBIAR: Imagen para el modal del stand
+                image: "stand.png" ,
+                description: "El stand de Quu es tu punto de partida en cada museo. Su color cambia en cada locación para coincidir con el color que debes desbloquear, guiándote visualmente a través de la ruta."
+            },
+            "merchandising": {
+                title: "Merchandising Exclusivo",
+                description: "Al finalizar la Ruta del Quetzal, recibirás una bolsa con regalos exclusivos. Aquí puedes ver una vista previa de lo que te espera.",
+                mockups: [
+                    // CAMBIAR: Imágenes de las miniaturas de merchandising
+                    { alt: "Taza de cerámica", src:"bolsa.png"},
+                    { alt: "Pin conmemorativo", src:"notebook.png"},
+                    { alt: "Llavero de Quetzal", src:"Camisa.png" },
+                    { alt: "Libreta de Viaje", src:"Taza.png" },
+                    { alt: "Cuadro de una obra de arte", src:"Cuadro.png" }
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const museumCards = document.querySelectorAll('.museum-card');
+            const infoCards = document.querySelectorAll('.info-card');
+            const modal = document.getElementById('info-detail-modal');
+            const infoContainer = document.getElementById('info-container');
+            const merchandisingContainer = document.getElementById('merchandising-container');
+            const modalTitle = document.getElementById('info-title');
+            const modalImage = document.getElementById('info-image');
+            const modalDescription = document.getElementById('info-description');
+            const merchandisingTitle = document.getElementById('merchandising-title');
+            const merchandisingDescription = document.getElementById('merchandising-description');
+            const merchandisingMainImage = document.getElementById('merchandising-main-image');
+            const merchandisingThumbnails = document.getElementById('merchandising-thumbnails');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            
+            // Función para añadir la animación de expansión
+            function addExpandAnimation(element) {
+                element.classList.add('animate-expand-click');
+                // Eliminar la clase de animación después de que termine la animación
+                setTimeout(() => {
+                    element.classList.remove('animate-expand-click');
+                }, 200); // La duración coincide con la de la animación en CSS
+            }
+
+            function openModal(data, type) {
+                // Ocultar todos los contenedores al inicio
+                infoContainer.classList.add('hidden');
+                merchandisingContainer.classList.add('hidden');
+
+                if (type === 'merchandising') {
+                    // Configurar el modal para merchandising
+                    merchandisingContainer.classList.remove('hidden');
+                    merchandisingTitle.textContent = data.title;
+                    merchandisingDescription.textContent = data.description;
+                    
+                    // Configurar la imagen principal y las miniaturas
+                    merchandisingMainImage.src = data.mockups[0].src;
+                    merchandisingThumbnails.innerHTML = '';
+                    
+                    data.mockups.forEach(item => {
+                        const img = document.createElement('img');
+                        img.src = item.src;
+                        img.alt = item.alt;
+                        img.classList.add('w-full', 'rounded-lg', 'shadow-md', 'cursor-pointer', 'border-2', 'border-transparent', 'hover:border-quu-blue', 'transition-all');
+                        img.addEventListener('click', () => {
+                            merchandisingMainImage.src = item.src;
+                            addExpandAnimation(img); // Añadir animación al hacer clic en la miniatura
+                        });
+                        merchandisingThumbnails.appendChild(img);
+                    });
+                } else {
+                    // Configurar el modal para museos o info
+                    infoContainer.classList.remove('hidden');
+                    modalTitle.textContent = data.title;
+                    modalDescription.textContent = data.description;
+                    modalImage.src = data.image;
+
+                    // Ajustar el color del título para las tarjetas de museo
+                    modalTitle.className = '';
+                    if (data.color) {
+                        modalTitle.classList.add(data.color);
+                    } else {
+                        modalTitle.classList.add('text-gray-900');
+                    }
+                    modalTitle.classList.add('text-3xl', 'sm:text-4xl', 'font-bold', 'mb-4');
+                }
+                
+                // Mostrar el modal
+                modal.classList.remove('hidden');
+            }
+
+            // Manejar clics en las tarjetas de museos
+            museumCards.forEach(card => {
+                card.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    addExpandAnimation(card); // Añadir animación al hacer clic en la tarjeta
+                    const museumId = card.dataset.museum;
+                    const data = museumData[museumId];
+                    if (data) {
+                        openModal(data, 'museum');
+                    }
+                });
+            });
+
+            // Manejar clics en las tarjetas de info
+            infoCards.forEach(card => {
+                card.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    addExpandAnimation(card); // Añadir animación al hacer clic en la tarjeta
+                    const infoId = card.dataset.info;
+                    const data = infoData[infoId];
+                    if (data) {
+                        openModal(data, infoId);
+                    }
+                });
+            });
+
+            // Cerrar el modal al hacer clic en el botón de cerrar
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+            
+            // Cerrar el modal al hacer clic en el fondo gris
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
